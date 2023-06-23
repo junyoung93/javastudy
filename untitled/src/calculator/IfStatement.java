@@ -72,7 +72,10 @@ public class IfStatement {
                     if (mode.equals("mul")) {
                         result = one * two;
                     } else if (mode.equals("div")) {
-                        result = one / two;
+                        if(two == 0){
+                            result = Double.POSITIVE_INFINITY;
+                        }else {
+                            result = one / two;}
                     }
                     equation.add(i + 1, Double.toString(result));
 
@@ -84,7 +87,7 @@ public class IfStatement {
                 }
             }
         }
-
+        boolean subtract = false;
         for (String s : equation) {
             if (s.equals("+")) {
                 mode = "add";
@@ -93,12 +96,10 @@ public class IfStatement {
             } else {
                 current = Double.parseDouble(s);
 
-                if (mode.equals("add")) {
-                    prev += current;
-                } else if (mode.equals("sub")) {
+                if (subtract) {
                     prev -= current;
                 } else {
-                    prev = current;
+                    prev += current;
                 }
             }
             prev = Math.round(prev * 100000) / 100000.0;
