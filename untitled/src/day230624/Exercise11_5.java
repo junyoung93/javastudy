@@ -1,6 +1,8 @@
-package day230623;
+package day230624;
 
 import java.util.*;
+
+// 다음에 제시된 Student 클래스가 Comparable인터페이스를 구현하도록 변경해서 이름(name)이 기본 정렬기준이 되도록 하시오.
 
 class Student implements Comparable {
     String name;
@@ -33,7 +35,7 @@ class Student implements Comparable {
         if (o instanceof Student) {
             Student tmp = (Student) o;
             return name.compareTo(tmp.name);
-             }   else   {
+             }else {
             return -1;
         }
     }

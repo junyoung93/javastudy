@@ -1,6 +1,11 @@
-package day230623;
+package day230624;
 
 import java.util.*;
+// ★못 풀었음
+// 다음의 코드는 성적평균의 범위별로 학생수를 세기 위한 것이다.
+// TreeSet이 학생들의 평균을 기준으로 정렬하도록 compare(Object o1, Object 02)와
+// 평균점수의 범위를 주면 해당 범위에 속한 학생으 ㅣ수를 반환하는 getGroupCount()를 완성하라.
+// (hint) TreeSet의 subSet(Object from, Object to)를 사용하라.
 
 class Student1 implements Comparable {
     String name;
